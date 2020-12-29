@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http//www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	<title>Projeto Revistas</title>
+	
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+	 <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+	</head>
+	<body>
+	
+	<style>
+		body{
+			background-color: black;
+			background-size: cover;  
+			color: #fff;
+		}
+		.cad{
+			margin-top: 100px;
+		}
+		.cad .card{
+			background: rgba(0, 0, 0, .6);
+		}
+		.cad label{
+			font-size: 16px;
+			color: #ccc;
+		}
+		.cad input{
+			font-size: 20px;
+			color: #fff;
+		}
+	</style>
+
+		<form action="salvarrevistahq" id="formrevista" method="post" th:object="${revistahqobj}">
+		
+		<div class="row cad">
+			<div class="col s12">
+				<div class="card">
+				
+					<div class="card-action blue white-text">
+						<h3>Cadastro de Revista hqs</h3>
+					</div>
+					
+					<div class="card-content">
+						<div class="form-field">
+						
+						<div class="input-fiel col s6">
+							<label for="id" class="active">Id</label>
+							<input id="id" name="id" th:field="*{id}" readonly="readonly">
+						</div>
+			
+						<div class="input-fiel col s6">
+							<label for="codigo" class="active">Codigo</label>
+							<input id="codigo" name="codigo" th:field="*{codigo}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="titulo">Titulo</label>
+							<input name="titulo" th:field="*{titulo}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="subTitulo">SubTitulo</label>
+							<input name="subTitulo" th:field="*{subTitulo}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="personagemPrinc">Personagem Principal</label>
+							<input name="personagemPrinc" th:field="*{personagemPrinc}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="status">Status</label>
+							<input name="status" th:field="*{status}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="situacao">Situacao</label>
+							<input name="situacao" th:field="*{situacao}">
+						</div>
+			
+						<div class="input-fiel col s6">
+							<label for="numeracao">Numeracao</label>
+							<input name="numeracao" th:field="*{numeracao}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="colecaoComp">Colecao Completa</label>
+							<input name="colecaoComp" th:field="*{colecaoComp}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="foto">Foto</label>
+							<input name="foto" th:field="*{foto}">
+						</div>
+			
+						<div class="input-fiel col s6">
+							<label for="dataAquis">Data de Aquisicao</label>
+							<input name="dataAquis" th:field="*{dataAquis}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="dataLancam">Data Lancamento</label>
+							<input name="dataLancam" th:field="*{dataLancam}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="tipoCapa">Tipo Capa</label>
+							<input name="tipoCapa" th:field="*{tipoCapa}">
+						</div>
+					
+						<div class="input-fiel col s6">
+							<label for="editora">Editora</label>
+							<input name="editora" th:field="*{editora}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="marca">Marca</label>
+							<input name="marca" th:field="*{marca}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="numPagina">Numeros de Paginas</label>
+							<input name="numPagina" th:field="*{numPagina}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="lido">Lido</label>
+							<input name="lido" th:field="*{lido}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="nivelHist">Nivel da Historia</label>
+							<input name="nivelHist" th:field="*{nivelHist}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="paraTroca">Para troca</label>
+							<input name="paraTroca" th:field="*{paraTroca}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="nacInt">Nacionalidade</label>
+							<input name="nacInt" th:field="*{nacInt}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="rara">Rara</label>
+							<input name="rara" th:field="*{rara}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="autor">Autor</label>
+							<input name="autor" th:field="*{autor}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="quant">Quantidade</label>
+							<input name="quant" th:field="*{quant}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<label for="padrao">Padrao</label>
+							<input name="padrao" th:field="*{padrao}">
+						</div>
+
+						<div class="input-fiel col s12">
+							<label for="observ">Observacoes</label>
+							<input name="observ" th:field="*{observ}">
+						</div>
+						
+						<div class="input-fiel col s6">
+							<input class="btn-large blue" type="submit" value="Salvar">
+							
+							<button class="btn-large blue" onclick="document.getElementById('formrevista').reset();">Novo</button>
+						</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+		
+		<br/>
+		<br/>
+		<a class="btn-large blue" href="/listarevistas">Lista de Revistas</a>
+		
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Titulo</th>
+					<th>SubTitulo</th>
+					<th>Pers.Principal</th>
+					<th>Foto</th>
+					<th>Tipo Capa</th>
+					<th>Editora</th>
+					<th>Marca</th>
+					<th>Nacionalidade</th>
+					<th>Autor</th>
+					<th>Obs</th>
+					<th>Editar</th>
+					<th>Excluir</th>
+				</tr>
+			</thead>
+		<tr th:each = "revista : ${revistas}">
+			<td th:text = "${revista.id}"></td>
+			<td th:text = "${revista.titulo}"></td>
+			<td th:text = "${revista.subTitulo}"></td>
+			<td th:text = "${revista.personagemPrinc}"></td>
+			<td th:text = "${revista.foto}"></td>
+			<td th:text = "${revista.tipoCapa}"></td>
+			<td th:text = "${revista.editora}"></td>
+			<td th:text = "${revista.marca}"></td>
+			<td th:text = "${revista.nacInt}"></td>
+			<td th:text = "${revista.autor}"></td>
+			<td th:text = "${revista.observ}"></td>
+			<td><a th:href="@{/editarrevista/{idrevista}(idrevista=${revista.id})}">Editar</a></td>
+			<td><a th:href="@{/removerrevista/{idrevista}(idrevista=${revista.id})}">Excluir</a></td>
+		</tr>
+		</table>
+		
+		<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+		<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+	</body>
+</html>
